@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,8 +9,10 @@ public class GameManager : MonoBehaviour
     public bool gameStarted = false;
 
     public GameObject player;
+    public TextMeshProUGUI scoreText;
 
     public int lives = 3;
+    public int score = 0;
 
     void Awake()
     {
@@ -28,6 +31,11 @@ public class GameManager : MonoBehaviour
 
     public void ReloadLevel() {
         SceneManager.LoadScene("Game");
+    }
+
+    public void UpdateScore() {
+        score++;
+        scoreText.text = "Score: " + score;
     }
 
 }

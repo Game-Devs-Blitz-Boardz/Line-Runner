@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject player;
 
+    public int lives = 3;
+
     void Awake()
     {
         instance = this;

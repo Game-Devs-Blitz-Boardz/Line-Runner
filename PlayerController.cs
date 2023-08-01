@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
         playerYPos = transform.position.y;
         hits = 0;
         SetLivesActive();
+        GameManager.instance.score = 0;
     }
 
     void Update()

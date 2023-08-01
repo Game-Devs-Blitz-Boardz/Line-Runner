@@ -1,18 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    float playerYPos;
+
     void Start()
     {
-        
+        playerYPos = transform.position.y;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0)) {
+            playerYPos = -playerYPos;
+
+            transform.position = new Vector3(transform.position.x, playerYPos, transform.position.x);
+        }
     }
 }

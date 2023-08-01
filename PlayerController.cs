@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "Obstacle") {
-            SceneManager.LoadScene("Game");
+            GameManager.instance.GameOver();
         }
     }
 }

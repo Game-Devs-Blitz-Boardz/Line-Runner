@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,6 +17,12 @@ public class PlayerController : MonoBehaviour
             playerYPos = -playerYPos;
 
             transform.position = new Vector3(transform.position.x, playerYPos, transform.position.x);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.tag == "Obstacle") {
+            SceneManager.LoadScene("Game");
         }
     }
 }

@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "Obstacle") {
+            GameManager.instance.Shake();
             hits++;
             lives[lives.Length - hits].SetActive(false);
             if (hits == GameManager.instance.lives) {
